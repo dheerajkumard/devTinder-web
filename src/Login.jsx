@@ -8,6 +8,7 @@ import { BASE_URL } from "./utils/constants";
 const Login = () => {
   const [email, setEmail] = useState('test@gmail.com');
   const [password, setPassword] = useState('Dheeru@123');
+  const [error, setError] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -19,6 +20,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/feed");
     } catch (error) { 
+      setError("Invalid email or password");
       console.error("Login failed:", error);
       }
   }
@@ -33,6 +35,7 @@ const Login = () => {
           <fieldset className="fieldset">            
             <input type="text" value= {password} className="input" placeholder="Password" onChange = {(e)=> setPassword(e.target.value)}/>
           </fieldset>
+          <p className="text-red-500">{error}</p>
           <div className="card-actions">
             <button className="btn btn-primary" onClick={handleLogin}>Login</button>
           </div>
