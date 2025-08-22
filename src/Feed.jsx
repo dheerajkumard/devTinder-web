@@ -26,9 +26,9 @@ const Feed = () => {
   if(feed.length === 0) return <div className="flex justify-center my-10">No feed available.</div>;
 
   return (
-    feed && <div className="flex justify-center my-10">
+    feed && (<div className="flex justify-center my-10">
       <UserCard user = {feed[0]}/>
-    </div>
+    </div>)
   );
 }
 
