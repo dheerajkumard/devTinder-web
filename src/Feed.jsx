@@ -22,6 +22,8 @@ const Feed = () => {
     getFeed();
   }, []);
   
+  if(!feed) return;
+  if(feed.length === 0) return <div className="flex justify-center my-10">No feed available.</div>;
 
   return (
     feed && <div className="flex justify-center my-10">
