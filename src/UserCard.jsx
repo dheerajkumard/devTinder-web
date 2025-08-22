@@ -28,8 +28,8 @@ const UserCard = ({user}) => {
   <div className="card-body">
     <h2 className="card-title">{firstName + " " + lastName}</h2>
     <div className="card-actions justify-center">
-      <button className="btn btn-primary" onClick={handleRequests("ignored", _id)}>Ignore</button>
-      <button className="btn btn-primary" onClick={handleRequests("interested", _id)}>Interested</button>
+      <button className="btn btn-primary" onClick={() => handleRequests("ignored", _id)}>Ignore</button>
+      <button className="btn btn-primary" onClick={() => handleRequests("interested", _id)}>Interested</button>
     </div>
   </div>
 </div>
